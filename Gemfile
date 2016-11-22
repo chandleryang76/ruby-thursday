@@ -7,6 +7,7 @@ gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
+gem 'bootstrap-sass', '~> 3.3.6'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -33,6 +34,17 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem "better_errors"
+  gem "capybara-webkit"
+  gem 'factory_girl_rails'
+  gem 'ffaker'
+  gem 'database_cleaner'
+  gem 'letter_opener'
+  gem 'rspec-rails'
+  gem 'pry'
+  gem 'pry-nav'
+  gem 'pry-rails'
+  gem 'simple_bdd'
 end
 
 group :development do
