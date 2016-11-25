@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'admin/hacker_list'
+
+  devise_for :admins
+  devise_for :hackers
   get 'home/index'
 
   root 'home#index'

@@ -1,2 +1,57 @@
+
 <h1>Home#index</h1>
 <p>Welcome to RubyThrusday</p>
+
+<p><button id ="modal-link">Kirk Quote</button></p>
+<div id="modal-backgroud">
+  <div id="modal-window">
+    <p class="modal-text">Beam me up, Scotty</p>
+    <a href="#" class="close">Close</a>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#modal-link').click(function () {
+      $('#modal-backgroud').fadeIn();
+    });
+    $('.close').click(function () {
+      $('#modal-backgroud').fadeOut();
+    })
+  });
+</script>
+
+
+<!--
+<style>
+
+
+  .outter {
+
+
+    background-color: green;
+    width: 100px;
+  }
+
+  .inner {
+    position: relative;
+    left: 100px;
+    background-color: yellow;
+
+
+  }
+</style>
+
+
+
+
+
+
+<div class = "outter">
+  outter
+  <div class = "inner">
+    inner
+  </div>
+
+</div>
+-->

@@ -5,4 +5,15 @@ feature "visiting homepage" do
     visit root_path
     expect(page).to have_text("Welcome to RubyThrusday")
   end
+
+  scenario "the visitor sees Kirk Quote",:js => true do
+    visit root_path
+    expect(page).not_to have_errors
+    click_button "Kirk Quote"
+    within(".modal-text") do
+      expect(page).to have_text("Beam me up, Scotty")
+    end
+    click_link "Close"
+    expect(page).not_to have_text("Beam me up, Scotty")
+  end
 end
