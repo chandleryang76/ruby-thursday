@@ -1,0 +1,35 @@
+<%= form_for(starship) do |f| %>
+  <% if starship.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(starship.errors.count, "error") %> prohibited this starship from being saved:</h2>
+
+      <ul>
+      <% starship.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  Crew Members:
+    <ul>
+      <%= f.fields_for :crew_members do |cm| %>
+      <li>
+
+        <%= cm.label :name%>
+        <%= cm.text_field :name%>
+        <%= cm.label :division%>
+        <%= cm.select(:division,["Command","Engineering","Science"]) %>
+
+      </li>
+      <% end %>
+    </ul>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
