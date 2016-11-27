@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   resources :starships
   get 'admin/hacker_list'
 
+  get 'starships/create_your_own_starship'
+
   devise_for :admins
   devise_for :hackers
   get 'home/index'

@@ -63,6 +63,11 @@ class StarshipsController < ApplicationController
     end
   end
 
+
+  def create_your_own_starship
+    redirect_to new_starship_path
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_starship

@@ -31,6 +31,7 @@ feature "Starship with Crew Members" do
 
 
   def enter_crew_members_info
+    binding.pry
     fill_in("starship[crew_members_attributes][0][name]",
             with: "James T. Kirk")
     select('Command', :from=>"starship[crew_members_attributes][0][division]")

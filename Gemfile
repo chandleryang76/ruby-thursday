@@ -47,6 +47,8 @@ group :development, :test do
   gem 'pry-nav'
   gem 'pry-rails'
   gem 'simple_bdd'
+  gem 'shoulda-matchers', '~> 3.1'
+  gem 'rails-controller-testing'
 end
 
 group :development do
