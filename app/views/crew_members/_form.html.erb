@@ -17,6 +17,20 @@
       <%= f.text_field :name %>
       <%= f.label :division %>
       <%= f.select(:division, ["Command","Engineering","Science"]) %>
+      </br>
+      <%= f.label :bio %>
+      <%= f.text_area :bio, id: "wysiwyg"%>
+
+
+      <script>
+
+        $(function() {
+          $('#wysiwyg').froalaEditor({
+
+          })
+        });
+      </script>
+
     </div>
     Select a Starship
     <div>
