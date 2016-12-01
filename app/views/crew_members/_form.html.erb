@@ -1,0 +1,44 @@
+<%= form_for(@crew_member) do |f| %>
+    <% if @crew_member.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@crew_member.errors.count, "error") %>
+            prohibited this crew member from being saved:</h2>
+
+          <ul>
+            <% @crew_member.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <%= f.label :division %>
+      <%= f.select(:division, ["Command","Engineering","Science"]) %>
+    </div>
+    Select a Starship
+    <div>
+      <%= f.collection_select :starship_id, Starship.all, :id,:name,prompt:'Selct Starship'%>
+    </div >
+    Or create a New Starship
+    <div>
+      <%= f.fields_for :starship do |starship| %>
+        <%= starship.label :name %>
+        <%= starship.text_field :name %>
+        And Create a Hologram Program for the New Starship
+        <div>
+          <%= starship.fields_for :holodeck_programs do |hp| %>
+            <%= hp.label :title %>
+            <%= hp.text_field :title %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Create Crew Member" %>
+    </div>
+
+<% end %>
